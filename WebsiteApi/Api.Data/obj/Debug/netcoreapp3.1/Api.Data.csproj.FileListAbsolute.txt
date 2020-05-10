@@ -1,0 +1,5 @@
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data\bin\Debug\netcoreapp3.1\Api.Data.deps.json
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data\bin\Debug\netcoreapp3.1\Api.Data.dll
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data\obj\Debug\netcoreapp3.1\Api.Data.csprojAssemblyReference.cache
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data\obj\Debug\netcoreapp3.1\Api.Data.AssemblyInfoInputs.cache
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data\obj\Debug\netcoreapp3.1\Api.Data.AssemblyInfo.cs
