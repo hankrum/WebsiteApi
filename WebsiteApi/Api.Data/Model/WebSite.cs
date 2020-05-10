@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Api.Data.Model
 {
-    public class WebSite
+    public class WebSite : IAuditable, IDeletable
     {
         [Key]
         public long Id { get; set; }

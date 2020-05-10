@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Api.Data.Model
 {
-    public class Category
+    public class Category : IAuditable, IDeletable
     {
         [Key]
         public long Id { get; set; }
