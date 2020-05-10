@@ -215,6 +215,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "Api.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Api.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Api.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -624,10 +634,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Api.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Api.Infrastructure/Api.Infrastructure.csproj",
+      "msbuildProject": "../Api.Infrastructure/Api.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Api.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.3"
     ]
   },
@@ -660,7 +676,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\dcgtech\\Documents\\Stefan\\WebsiteApi\\WebsiteApi\\Api.Infrastructure\\Api.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\dcgtech\\Documents\\Stefan\\WebsiteApi\\WebsiteApi\\Api.Infrastructure\\Api.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
