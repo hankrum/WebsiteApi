@@ -6,13 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Api.Data/1.0.0": {
+      "Api.Data.Services/1.0.0": {
         "dependencies": {
-          "Api.Infrastructure": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "3.1.3"
+          "Api.Data": "1.0.0"
         },
         "runtime": {
-          "Api.Data.dll": {}
+          "Api.Data.Services.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
@@ -182,6 +181,15 @@
       "System.Collections.Immutable/1.7.0": {},
       "System.ComponentModel.Annotations/4.7.0": {},
       "System.Diagnostics.DiagnosticSource/4.7.0": {},
+      "Api.Data/1.0.0": {
+        "dependencies": {
+          "Api.Infrastructure": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.3"
+        },
+        "runtime": {
+          "Api.Data.dll": {}
+        }
+      },
       "Api.Infrastructure/1.0.0": {
         "runtime": {
           "Api.Infrastructure.dll": {}
@@ -190,7 +198,7 @@
     }
   },
   "libraries": {
-    "Api.Data/1.0.0": {
+    "Api.Data.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -327,6 +335,11 @@
       "sha512": "sha512-oJjw3uFuVDJiJNbCD8HB4a2p3NYLdt1fiT5OGsPLw+WTOuG0KpP4OXelMmmVKpClueMsit6xOlzy4wNKQFiBLg==",
       "path": "system.diagnostics.diagnosticsource/4.7.0",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512"
+    },
+    "Api.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Api.Infrastructure/1.0.0": {
       "type": "project",

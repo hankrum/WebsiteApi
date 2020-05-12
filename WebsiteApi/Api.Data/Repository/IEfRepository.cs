@@ -8,7 +8,7 @@ namespace Api.Data.Repository
 {
     public interface IEfRepository<T> where T : class
     {
-        IQueryable<T> All { get; }
+        IQueryable<T> All(int page, int? size);
 
         T Add(T entity);
 

@@ -35,9 +35,12 @@ namespace Api.Data
 
             builder.Entity<WebSite>().Property<bool>("isDeleted");
             builder.Entity<WebSite>().HasQueryFilter(m => EF.Property<bool>(m, "isDeleted") == false);
+            builder.Entity<WebSite>().HasIndex(w => w.Url).IsUnique();
+            builder.Entity<WebSite>().HasIndex(w => w.Name).IsUnique();
 
             builder.Entity<Category>().Property<bool>("isDeleted");
-            builder.Entity<Category>().HasQueryFilter(m => EF.Property<bool>(m, "isDeleted") == false);
+            builder.Entity<Category>().HasQueryFilter(c => EF.Property<bool>(c, "isDeleted") == false);
+            builder.Entity<Category>().HasIndex(c => c.Name).IsUnique();
         }
 
         private void UpdateSoftDelete()

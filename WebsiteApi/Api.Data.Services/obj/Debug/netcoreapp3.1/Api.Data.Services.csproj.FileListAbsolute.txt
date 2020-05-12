@@ -1,0 +1,14 @@
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Data.Services.deps.json
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Data.Services.dll
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Data.Services.pdb
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Data.dll
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Infrastructure.dll
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Data.pdb
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\bin\Debug\netcoreapp3.1\Api.Infrastructure.pdb
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.csprojAssemblyReference.cache
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.csproj.CoreCompileInputs.cache
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.AssemblyInfoInputs.cache
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.AssemblyInfo.cs
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.csproj.CopyComplete
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.dll
+C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Data.Services\obj\Debug\netcoreapp3.1\Api.Data.Services.pdb

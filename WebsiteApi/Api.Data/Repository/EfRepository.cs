@@ -19,12 +19,10 @@ namespace Api.Data.Repository
             this.context = context;
         }
 
-        public IQueryable<T> All
+        public IQueryable<T> All(int page, int? size)
         {
-            get
-            {
-                return this.context.Set<T>().AsQueryable();
-            }
+            var queryResult = this.context.Set<T>().AsQueryable();
+            return queryResult.Skip(page*size ?? 0).Take(size ?? queryResult.Count());
         }
 
         public T Add(T entity)
