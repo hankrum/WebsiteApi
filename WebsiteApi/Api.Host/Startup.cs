@@ -39,8 +39,7 @@ namespace Api.Host
         private void RegisterData(IServiceCollection services)
         {
             services.AddDbContext<MsSqlDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                b => b.MigrationsAssembly("OddsSystem")));
+                options.UseSqlServer(Configuration.GetConnectionString("WebSiteContext")));
 
             services.BuildServiceProvider().GetService<MsSqlDbContext>().Database.Migrate();
 
