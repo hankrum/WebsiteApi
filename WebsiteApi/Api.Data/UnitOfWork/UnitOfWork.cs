@@ -11,8 +11,8 @@ namespace Api.Data.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MsSqlDbContext context;
-        private IEfRepository<WebSite> webSites;
-        private IEfRepository<Category> categories;
+        private readonly IEfRepository<WebSite> webSites;
+        private readonly IEfRepository<Category> categories;
 
         public UnitOfWork(
             MsSqlDbContext context, 

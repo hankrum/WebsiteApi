@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Api.Data
 {
@@ -17,11 +19,11 @@ namespace Api.Data
 
         public DbSet<Category> Categorys { get; set; }
 
-        public override int SaveChanges()
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            UpdateSoftDelete();
-            UpdateCreateAndModify();
-            return base.SaveChanges();
+            this.UpdateSoftDelete();
+            this.UpdateCreateAndModify();
+            return await base.SaveChangesAsync(cancellationToken);
         }
 
         public new DbSet<T> Set<T>() where T : class
@@ -40,7 +42,7 @@ namespace Api.Data
 
         private void UpdateSoftDelete()
         {
-            foreach (var entry in ChangeTracker.Entries())
+            foreach (var entry in this.ChangeTracker.Entries())
             {
                 var entity = (IDeletable)entry.Entity;
 
