@@ -14,6 +14,8 @@ namespace Api.Data.Services
 
         Task<WebSite> GetById(long id);
 
+        Task<WebSite> GetByUrl(string url);
+        
         Task<WebSite> Create(WebSite category);
 
         Task<WebSite> Delete(long id);

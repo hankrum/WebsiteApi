@@ -10,7 +10,7 @@ namespace Api.Data
     {
         DbSet<WebSite> WebSites { get; set; }
 
-        DbSet<Category> Categories { get; set; }
+        DbSet<Category> Categorys { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

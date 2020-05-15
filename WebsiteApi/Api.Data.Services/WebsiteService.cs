@@ -4,28 +4,51 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dto = Api.Data.Services.DtoModels;
+using Dbo = Api.Data.Model;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Internal;
+using Api.Data.Model;
+using System.Linq;
 
 namespace Api.Data.Services
 {
     public class WebsiteService : IWebsiteService
     {
         private readonly IUnitOfWork unitOfWork;
-//        private readonly ICategoryService categoryService;
+        private readonly ICategoryService categoryService;
 
-        public WebsiteService(IUnitOfWork unitOfWork)
+        public WebsiteService(IUnitOfWork unitOfWork, ICategoryService categoryService)
         {
             Validated.NotNull(unitOfWork, nameof(unitOfWork));
-//            Validated.NotNull(categoryService, nameof(categoryService));
+            Validated.NotNull(categoryService, nameof(categoryService));
             this.unitOfWork = unitOfWork;
-//            this.categoryService = categoryService;
+            this.categoryService = categoryService;
         }
 
         public async Task<IEnumerable<Dto.WebSite>> All()
         {
-            // TODO: fix pagination and sorting
-            var websites = await this.unitOfWork.WebSites.All(0, null).ToListAsync();
+            // TODO: fix pagination - skip/take and sorting
+            var websites = this.unitOfWork.WebSites.All();
+            var categories = this.unitOfWork.Categories.All();
 
-            return websites.Map();
+            var joined = websites.Join(
+                categories,
+                webSite => webSite.CategoryId,
+                category => category.Id,
+                (website, category) => new WebSite
+                {
+                    Id = website.Id,
+                    Name = website.Name,
+                    Url = website.Url,
+                    SnapshotUrl = website.SnapshotUrl,
+                    Category = category,
+                    LoginEmail = website.LoginEmail,
+                    LoginPassword = website.LoginPassword
+                }
+            );
+            var result = await joined.ToListAsync();
+
+            return result.Map();
         }
 
         public async Task<bool> Exists(long id)
@@ -40,36 +63,61 @@ namespace Api.Data.Services
             return website.Map();
         }
 
+        public async Task<Dto.WebSite> GetByUrl(string url)
+        {
+            var website = await this.unitOfWork.WebSites.All().Where(w => w.Url == url).ToListAsync();
+
+            return website.FirstOrDefault().Map();
+        }
+
         public async Task<Dto.WebSite> Create(Dto.WebSite website)
         {
             Validated.NotNull(website, nameof(website));
 
-            Dto.WebSite addedWebsite = this.unitOfWork.WebSites.Add(website.Map()).Map();
+            Dbo.Category category = await this.categoryService.GetByName(website.Category.Name);
+
+            if (category == null)
+            {
+                category = await this.categoryService.Create(website.Category.Map());
+            }
+
+            website.Category.Id = category.Id;
+
+            Dbo.WebSite addedWebsite = this.unitOfWork.WebSites.Add(website.Map());
 
             await this.unitOfWork.SaveChanges();
 
-            return addedWebsite;
+            return addedWebsite.Map();
         }
 
         public async Task<Dto.WebSite> Delete(long id)
         {
             var model = await this.unitOfWork.WebSites.GetById(id);
-            Dto.WebSite deletedWebsite = this.unitOfWork.WebSites.Delete(model).Map();
+            Dbo.WebSite deletedWebsite = this.unitOfWork.WebSites.Delete(model);
 
             await this.unitOfWork.SaveChanges();
 
-            return deletedWebsite;
+            return deletedWebsite.Map();
         }
 
         public async Task<Dto.WebSite> Update(Dto.WebSite website)
         {
             Validated.NotNull(website, nameof(website));
 
-            Dto.WebSite updatedWebsite = this.unitOfWork.WebSites.Update(website.Map()).Map();
+            Dbo.Category category = await this.categoryService.GetByName(website.Category.Name);
+
+            if (category == null)
+            {
+                category = await this.categoryService.Create(website.Category.Map());
+            }
+
+            website.Category.Id = category.Id;
+
+            Dbo.WebSite updatedWebsite = this.unitOfWork.WebSites.Update(website.Map());
 
             await this.unitOfWork.SaveChanges();
 
-            return updatedWebsite;
+            return updatedWebsite.Map();
         }
     }
 }

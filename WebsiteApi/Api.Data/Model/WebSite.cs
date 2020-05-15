@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Api.Data.Model
@@ -17,8 +18,11 @@ namespace Api.Data.Model
         [Url]
         public string Url { get; set; }
 
+        public long CategoryId { get; set; }
+
         [Required]
-        public Category Category { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
 
         [Required]
         [Url]

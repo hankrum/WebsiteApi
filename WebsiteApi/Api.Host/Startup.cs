@@ -39,7 +39,8 @@ namespace Api.Host
         private void RegisterData(IServiceCollection services)
         {
             services.AddDbContext<MsSqlDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("WebSiteContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("WebSitesContext"),
+                b => b.MigrationsAssembly("Api.Host")));
 
             services.BuildServiceProvider().GetService<MsSqlDbContext>().Database.Migrate();
 
@@ -50,6 +51,7 @@ namespace Api.Host
         private void RegistrServices(IServiceCollection services)
         {
             services.AddTransient<IWebsiteService, WebsiteService>();
+            services.AddTransient<ICategoryService, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

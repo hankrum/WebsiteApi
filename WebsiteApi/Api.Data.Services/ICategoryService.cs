@@ -14,6 +14,8 @@ namespace Api.Data.Services
 
         Task<Category> GetById(long id);
 
+        Task<Category> GetByName(string name);
+
         Task<Category> Create(Category category);
 
         Task<Category> Delete(long id);

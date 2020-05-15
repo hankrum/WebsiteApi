@@ -12,7 +12,7 @@ namespace Api.Host.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WebSiteController : ControllerBase
+    public class WebSiteController : Controller
     {
         private IWebsiteService websiteService;
 
@@ -55,7 +55,19 @@ namespace Api.Host.Controllers
         [HttpPost]
         public async Task<ActionResult<WebSite>> Post([FromBody] WebSite webSite)
         {
-            var result = await this.websiteService.Create(webSite);
+            var websiteResult = await this.websiteService.GetByUrl(webSite.Url);
+
+            WebSite result;
+            if(websiteResult == null)
+            {
+                result = await this.websiteService.Create(webSite);
+            }
+            else
+            {
+                webSite.Id = websiteResult.Id;
+
+                result = await this.websiteService.Update(webSite);
+            }
 
             return CreatedAtAction(
                 nameof(this.Post),
