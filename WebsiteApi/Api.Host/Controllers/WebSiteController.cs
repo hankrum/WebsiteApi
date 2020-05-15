@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Api.Data.Services;
 using Api.Data.Services.DtoModels;
-using Api.Data.Services;
 using Api.Infrastructure;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Api.Host.Controllers
 {
@@ -95,7 +92,7 @@ namespace Api.Host.Controllers
             return result;
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/WebSite/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<WebSite>> Delete(int id)
         {

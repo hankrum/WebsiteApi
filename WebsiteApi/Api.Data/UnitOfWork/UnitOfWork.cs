@@ -1,9 +1,6 @@
 ﻿using Api.Data.Model;
 using Api.Data.Repository;
 using Api.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Api.Data.UnitOfWork

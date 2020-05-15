@@ -1,14 +1,13 @@
-﻿using Api.Data.UnitOfWork;
+﻿using Api.Data.Model;
+using Api.Data.UnitOfWork;
 using Api.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Dto = Api.Data.Services.DtoModels;
-using Dbo = Api.Data.Model;
-using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore.Internal;
-using Api.Data.Model;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Dbo = Api.Data.Model;
+using Dto = Api.Data.Services.DtoModels;
 
 namespace Api.Data.Services
 {
