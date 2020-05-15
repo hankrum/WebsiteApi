@@ -1,9 +1,0 @@
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\bin\Debug\netcoreapp3.1\Api.Infrastructure.deps.json
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\bin\Debug\netcoreapp3.1\Api.Infrastructure.dll
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\bin\Debug\netcoreapp3.1\Api.Infrastructure.pdb
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\obj\Debug\netcoreapp3.1\Api.Infrastructure.csprojAssemblyReference.cache
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\obj\Debug\netcoreapp3.1\Api.Infrastructure.csproj.CoreCompileInputs.cache
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\obj\Debug\netcoreapp3.1\Api.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\obj\Debug\netcoreapp3.1\Api.Infrastructure.AssemblyInfo.cs
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\obj\Debug\netcoreapp3.1\Api.Infrastructure.dll
-C:\Users\dcgtech\Documents\Stefan\WebsiteApi\WebsiteApi\Api.Infrastructure\obj\Debug\netcoreapp3.1\Api.Infrastructure.pdb
